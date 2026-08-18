@@ -22,6 +22,7 @@ body {
   color: var(--fg);
   font-family: var(--font-ui);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
@@ -62,9 +63,15 @@ header {
   color: var(--pink);
 }
 
-/* Hero — full-bleed animated canvas behind giant color-blocked headline */
+/* Hero — full-bleed animated canvas behind giant color-blocked headline.
+   Breaks out of .wrap's max-width so the canvas spans the real viewport. */
 .hero {
   position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   min-height: 86vh;
   display: flex;
   align-items: center;
